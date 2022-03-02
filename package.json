@@ -1,0 +1,35 @@
+{
+    "name": "entity-rest-client",
+    "version": "0.1.1",
+    "description": "Entity REST Client",
+    "author": "Jason Separovic",
+    "license": "ISC",
+    "main": "dist/tsc/index.js",
+    "types": "dist/tsc/index.d.ts",
+    "files": [
+        "/dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com:jseparovic/entity-rest-client.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "scripts": {
+        "clean": "rm -rf dist build package junit.xml",
+        "build": "tsc -p tsconfig.json",
+        "build-all": "yarn clean && yarn build",
+        "do-install": "yarn install",
+        "entity-rest-client-publish": "yarn run build && yarn publish --verbose --new-version 0.1.1 --access public"
+    },
+    "dependencies": {
+        "axios": "^0.26.0"
+    },
+    "devDependencies": {
+        "@types/node": "^14.18.9",
+        "ts-node": "^9.1.1",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.5"
+    }
+}
